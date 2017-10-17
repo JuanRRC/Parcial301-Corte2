@@ -11,15 +11,19 @@ import javax.swing.table.DefaultTableModel;
 
 
 
+
+
+
 public class Marco extends JFrame{
 	
-	Visualizador pantalla;
+//	Visualizador pantalla;
 	Registro formulario;
 	private JTable tablaP;
 	private String[] columnas = {" Identificaion ", "   Datos   "};
 	private ArrayList<Object[]> personas = new ArrayList<Object[]>();
 	private DefaultTableModel table_model;
 	private Object[][] datos2;
+	PanelArriba panelArriba;
 	
 	
 	public Marco(){
@@ -50,12 +54,15 @@ public void componente() {
 		tablaP = new JTable(table_model);
 		
 
-    	pantalla = new Visualizador();
-		this.add(pantalla, BorderLayout.NORTH);
+    	//pantalla = new Visualizador();
+		//this.add(pantalla, BorderLayout.NORTH);
 		formulario = new Registro(table_model, personas);
 		this.add(formulario, BorderLayout.WEST);
 		this.add(new JScrollPane(tablaP), BorderLayout.EAST);
-        
+		/*
+		panelArriba = new PanelArriba( );
+        add( panelArriba, BorderLayout.NORTH );
+      */  
 }
 	
 

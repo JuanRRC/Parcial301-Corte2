@@ -29,7 +29,7 @@ public class Registro extends JPanel implements ActionListener{
 	
 	public static final String AGREGAR = "AGREGAR";
 	
-	Visualizador pantalla;
+	
 	private JButton agregar;
     private JTextField nombre,apellido,numero,celular,direccion;
     private JComboBox tipo,genero;
@@ -310,16 +310,41 @@ public class Registro extends JPanel implements ActionListener{
         if( accion.equals( AGREGAR ) ) {
         	
         	String nom = nombre.getText();
+        	if(nom.length()==0){
+        		JOptionPane.showMessageDialog(this, "invalido ingresa el dato correco", "Error!", JOptionPane.ERROR_MESSAGE);
+                
+            }
         	String ape = apellido.getText();
+        	if(ape.length()==0){
+        		JOptionPane.showMessageDialog(this, "invalido ingresa el dato correco", "Error!", JOptionPane.ERROR_MESSAGE);
+                
+            }
         	String t = (String) tipo.getSelectedItem();
+        	
         	String gen = (String) genero.getSelectedItem();
+        	
+        	
+        	
         	String num = numero.getText();
+        	if(num.length()==0){
+        		JOptionPane.showMessageDialog(this, "invalido ingresa el dato correco", "Error!", JOptionPane.ERROR_MESSAGE);
+                
+            }
         	int ed = (int) edad.getValue();
         	int p = (int) peso.getValue();
         	int a = (int) altura.getValue();
         	String ce = celular.getText();
+        	if(ce.length()==0){
+        		JOptionPane.showMessageDialog(this, "invalido ingresa el dato correco", "Error!", JOptionPane.ERROR_MESSAGE);
+                
+            }
+        	
         	int cel = Integer.parseInt(ce);
         	String dir = direccion.getText();
+        	if(dir.length()==0){
+        		JOptionPane.showMessageDialog(this, "invalido ingresa el dato correco", "Error!", JOptionPane.ERROR_MESSAGE);
+                
+            }
         	//nombre, apellido,tipo,genero,numero,edad,peso,altura,celular,direccion
         	referencia_almacen.add(Persona.build(nom,ape,t,gen,num,ed,p,a,cel,dir).getDetalles());
     		Object[][] datos = referencia_almacen.toArray(new Object[referencia_almacen.size()][]);
