@@ -72,7 +72,7 @@ public class Registro extends JPanel implements ActionListener{
         
         
         JLabel imagen = new JLabel( );
-        ImageIcon icono = new ImageIcon( "Imagen/imagen.gif" );
+        ImageIcon icono = new ImageIcon( "Imagen/logo.gif" );
         imagen.setIcon( icono );
         constraint = new GridBagConstraints( );
         constraint.gridx = 0;
