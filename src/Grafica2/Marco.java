@@ -13,6 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class Marco extends JFrame{
 	
+	Visualizador pantalla;
 	Registro formulario;
 	private JTable tablaP;
 	private String[] columnas = {" Identificaion ", "   Datos   "};
@@ -48,7 +49,9 @@ public void componente() {
 		table_model = new DefaultTableModel(datos2, columnas);
 		tablaP = new JTable(table_model);
 		
-		
+
+    	pantalla = new Visualizador();
+		this.add(pantalla, BorderLayout.NORTH);
 		formulario = new Registro(table_model, personas);
 		this.add(formulario, BorderLayout.WEST);
 		this.add(new JScrollPane(tablaP), BorderLayout.EAST);

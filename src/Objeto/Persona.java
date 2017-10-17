@@ -110,7 +110,7 @@ public class Persona {
 	}
 
 	public Object[] getDetalles() {
-		Object[] data = {this.nombre, this.apellido, this.Tipo,this.genero,this.numero,this.Edad,this.peso,this.altura,this.celular,this.direccion};
+		Object[] data = {this.numero,this.nombre};
 		System.out.println(data);
 		return data;
 	}

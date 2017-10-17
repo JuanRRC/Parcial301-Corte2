@@ -1,5 +1,6 @@
 package Grafica2;
 
+import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -13,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
@@ -27,7 +29,7 @@ public class Registro extends JPanel implements ActionListener{
 	
 	public static final String AGREGAR = "AGREGAR";
 	
-	
+	Visualizador pantalla;
 	private JButton agregar;
     private JTextField nombre,apellido,numero,celular,direccion;
     private JComboBox tipo,genero;
@@ -44,12 +46,14 @@ public class Registro extends JPanel implements ActionListener{
 		this.referencia_almacen = referencia_almacen;
 		
 	    this.iniciar();  
+
 	}
     
     
     public void iniciar() {
 
- 		
+		
+    	
         setLayout( new GridBagLayout( ) );
 
         Border borde = BorderFactory.createTitledBorder( "Datos" );
@@ -202,7 +206,7 @@ public class Registro extends JPanel implements ActionListener{
         add(ed,constraint);
         
         
-        SpinnerNumberModel sModel = new SpinnerNumberModel(0, 0, 30, 1);
+        SpinnerNumberModel sModel = new SpinnerNumberModel(0, 0, 150, 1);
         edad = new JSpinner(sModel);
         constraint = new GridBagConstraints( );
         constraint.gridx = 1;
@@ -223,7 +227,7 @@ public class Registro extends JPanel implements ActionListener{
         add(pes,constraint);
         
         
-        SpinnerNumberModel sModel2 = new SpinnerNumberModel(0, 0, 30, 1);
+        SpinnerNumberModel sModel2 = new SpinnerNumberModel(0, 0, 500, 1);
         peso = new JSpinner(sModel2);
         constraint = new GridBagConstraints( );
         constraint.gridx = 1;
@@ -244,7 +248,7 @@ public class Registro extends JPanel implements ActionListener{
         add(altu,constraint);
         
         
-        SpinnerNumberModel sModel3 = new SpinnerNumberModel(0, 0, 30, 1);
+        SpinnerNumberModel sModel3 = new SpinnerNumberModel(0, 0, 300, 1);
         altura = new JSpinner(sModel3);
         constraint = new GridBagConstraints( );
         constraint.gridx = 1;
@@ -252,7 +256,7 @@ public class Registro extends JPanel implements ActionListener{
         constraint.fill = GridBagConstraints.BOTH;
         insets = new Insets( 5, 10, 5, 10 );
         constraint.insets = insets;
-        add(peso,constraint);
+        add(altura,constraint);
 
         
         JLabel cel = new JLabel("Celular :");
@@ -296,7 +300,6 @@ public class Registro extends JPanel implements ActionListener{
         
         
         
-        
     }
 
 
@@ -321,7 +324,7 @@ public class Registro extends JPanel implements ActionListener{
         	referencia_almacen.add(Persona.build(nom,ape,t,gen,num,ed,p,a,cel,dir).getDetalles());
     		Object[][] datos = referencia_almacen.toArray(new Object[referencia_almacen.size()][]);
     		referencia_tabla_model.setDataVector(datos, columnas);
-        	
+    		JOptionPane.showMessageDialog(this, "Persona Ingresada ");
         }
 		
 		
